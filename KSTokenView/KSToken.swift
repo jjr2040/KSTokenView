@@ -70,6 +70,12 @@ open class KSToken : UIControl {
    
    ///Token border color
    open var borderColor: UIColor = UIColor.black
+    
+    ///Token corner radius
+    open var cornerRadius: CGFloat = 15.0
+    
+    ///Token corner radius
+    open var font: UIFont = UIFont.systemFont(ofSize: 14)
    
    /// default is 200. Maximum width of token. After maximum limit is reached title is truncated at end with '...'
    fileprivate var _maxWidth: CGFloat? = 200
@@ -121,7 +127,7 @@ open class KSToken : UIControl {
       //// Rectangle Drawing
       
       // fill background
-      let rectanglePath = UIBezierPath(roundedRect: rect, cornerRadius: 15)
+      let rectanglePath = UIBezierPath(roundedRect: rect, cornerRadius: cornerRadius)
       
       var textColor: UIColor
       var backgroundColor: UIColor
@@ -148,7 +154,7 @@ open class KSToken : UIControl {
       rectanglePath.fill()
       
       var paddingX: CGFloat = 0.0
-      var font = UIFont.systemFont(ofSize: 14)
+      var font = self.font
       var tokenField: KSTokenField? {
          return superview! as? KSTokenField
       }
