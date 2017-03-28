@@ -431,6 +431,10 @@ open class KSTokenView: UIView {
         _tokenField.returnKeyType = type
     }
     
+    open func setInputAccesoryView(_ view:UIView) {
+        _tokenField.inputAccessoryView = view
+    }
+    
    //MARK: - Private Methods
    //__________________________________________________________________________________
    //
